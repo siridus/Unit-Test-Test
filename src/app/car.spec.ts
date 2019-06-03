@@ -4,7 +4,7 @@ import { Car } from './car';
 let car: Car;
 
 beforeEach(() => {
-  car = new Car('Test', 10, 'Beschreibung');
+  car = new Car(10, 'Test', 'Beschreibung', 1000);
 });
 
 afterEach(() => {
@@ -16,15 +16,19 @@ describe('Car', () => {
     expect(car).toBeTruthy();
   });
 
-  it('getType() should return string "Test"', () => {
-    expect(car.getType()).toBe('Test');
+  it('id should return number 10', () => {
+    expect(car.id).toBe(10);
   });
 
-  it('getValue() should return number 10', () => {
-    expect(car.getValue()).toBe(10);
+  it('type should return string "Test"', () => {
+    expect(car.type).toBe('Test');
   });
 
-  it('getDescriptione() should return string "Beschreibung"', () => {
-    expect(car.getDescription()).toBe('Beschreibung');
+  it('description should return string "Beschreibung"', () => {
+    expect(car.description).toBe('Beschreibung');
+  });
+
+  it('price should return string 1000', () => {
+    expect(car.price).toBe('Beschreibung');
   });
 });

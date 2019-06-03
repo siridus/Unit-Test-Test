@@ -1,8 +1,8 @@
 <h1>Car List</h1>
 <div *ngFor="let car of carList | keyvalue" class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-text">{{ car.value.getType() }}</h5>
-    <p class="card-text">{{ car.value.getValue() }}</p>
-    <a routerLink="/details/{{car.key}}">Details</a>
+    <h5 class="card-text">{{ car.value.type }}</h5>
+    <p class="card-text">{{ car.value.price }}</p>
+    <a routerLink="/details/{{car.value.id}}">Details</a>
   </div>
 </div>

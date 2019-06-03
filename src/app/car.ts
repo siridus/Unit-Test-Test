@@ -1,23 +1,13 @@
 export class Car {
+    id: number;
     type: string;
-    value: number;
     description: string;
+    price: number;
 
-    constructor(t: string, v: number, d: string) {
-        this.type = t;
-        this.value = v;
-        this.description = d;
-    }
-
-    getType(): string {
-        return this.type;
-    }
-
-    getValue(): number {
-        return this.value;
-    }
-
-    getDescription(): string {
-        return this.description;
+    constructor(id: number, type: string, description: string, price: number) {
+        this.id = id;
+        this.type = type;
+        this.description = description;
+        this.price = price;
     }
 }
