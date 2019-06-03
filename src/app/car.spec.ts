@@ -16,15 +16,15 @@ describe('Car', () => {
     expect(car).toBeTruthy();
   });
 
-  it('should return type "Test"', () => {
+  it('getType() should return string "Test"', () => {
     expect(car.getType()).toBe('Test');
   });
 
-  it('should return type "10"', () => {
+  it('getValue() should return number 10', () => {
     expect(car.getValue()).toBe(10);
   });
 
-  it('should return type "Test"', () => {
+  it('getDescriptione() should return string "Beschreibung"', () => {
     expect(car.getDescription()).toBe('Beschreibung');
   });
 });
