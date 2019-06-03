@@ -11,15 +11,19 @@ export class CarsService {
 
   constructor() {
     this.cars = [
-      new Car('Honda', 150),
-      new Car('BMW', 2000),
-      new Car('Mercedes', 111),
-      new Car('Honda', 344),
-      new Car('Renault', 150),
+      new Car('Honda', 150, 'Beschreibung'),
+      new Car('BMW', 2000, 'Tolles Auto'),
+      new Car('Mercedes', 111, 'Kaputte Reifen'),
+      new Car('Honda', 344, 'Kein Motor'),
+      new Car('Renault', 150, 'Klasse!'),
     ];
   }
 
   getCars(): Observable<Car[]> {
     return of(this.cars);
+  }
+
+  getCar(id: number): Observable<Car> {
+    return of(this.cars[id]);
   }
 }
