@@ -1,0 +1,8 @@
+<h1>Car List</h1>
+<div *ngFor="let car of carList" class="card">
+  <div class="card-body">
+    <h5 class="card-text">{{ car.getType() }}</h5>
+    <p class="card-text">{{ car.getValue() }}</p>
+  </div>
+</div>
+<alert type="success">hello</alert>
