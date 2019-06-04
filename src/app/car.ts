@@ -1,5 +1,6 @@
 export class Car {
     id: number;
+    available = true;
     type: string;
     description: string;
     price: number;
@@ -9,5 +10,10 @@ export class Car {
         this.type = type;
         this.description = description;
         this.price = price;
+    }
+
+    changeAvailable(): boolean {
+        this.available = !this.available;
+        return this.available;
     }
 }

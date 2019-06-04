@@ -1,12 +1,14 @@
 import { CarListComponent } from './car-list.component';
-import { CarsService } from '../cars.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { CarsService } from '../cars.service';
 
 describe('CarListComponent', () => {
   let carListComponent: CarListComponent;
   let carListFixture: ComponentFixture<CarListComponent>;
-  let carsService: CarsService;
+  let debugElements: DebugElement[];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -17,7 +19,6 @@ describe('CarListComponent', () => {
 
     carListFixture = TestBed.createComponent(CarListComponent);
     carListComponent = carListFixture.componentInstance;
-    carsService = TestBed.get(CarsService);
   });
 
   it('should create an empty array of cars', () => {
@@ -27,5 +28,17 @@ describe('CarListComponent', () => {
   it('should create an filled array of cars', () => {
     carListComponent.getCars();
     expect(carListComponent.carList).toBeTruthy();
+  });
+
+  it('should create no links at all', () => {
+    debugElements = carListFixture.debugElement.queryAll(By.css('a'));
+    expect(debugElements.length).toBe(0);
+  });
+
+  it('should create links', () => {
+    carListFixture.autoDetectChanges();
+    debugElements = carListFixture.debugElement.queryAll(By.css('a'));
+    // spyOn(carListComponent, 'getCars').and.returnValue(MOCKCARS);
+    expect(debugElements.length).toBeGreaterThan(0);
   });
 });

@@ -1,10 +1,14 @@
 <h1>Car List</h1>
-<div *ngFor="let car of carList | keyvalue" class="card" style="width: 18rem;">
+<div *ngFor="let car of carList | keyvalue" class="card text-center" style="width: 18rem;">
   <div class="card-header">
     {{ car.value.type }}
   </div>
   <div class="card-body">
-    <p class="card-text">Price: {{ car.value.price }}</p>
-    <a routerLink="/details/{{car.value.id}}">Details</a>
+    <div [hidden]="!car.value.available">
+      <p class="card-text">Price: <span>{{ car.value.price }}</span></p>
+      <a class="card-link" routerLink="/details/{{car.value.id}}">Details</a>
+      <a class="card-link" routerLink="#" (click)="car.value.changeAvailable()">Buy</a>
+    </div>
+    <p class="card-text" [hidden]="car.value.available">SOLD</p>
   </div>
 </div>
