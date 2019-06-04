@@ -1,8 +1,21 @@
 <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <h5 class="card-title">{{selectedCar.type}}</h5>
+  </div>
   <div class="card-body">
-    <h5 class="card-title">{{ selectedCar.getType() }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{selectedCar.getValue()}}</h6>
-    <p class="card-text">{{selectedCar.getDescription()}}
-    </p>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">Price:</div>
+          <div class="col-sm">{{selectedCar.price | currency:'USD':"symbol-narrow" }}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm">ID:</div>
+          <div class="col-sm">{{selectedCar.id}}</div>
+        </div>
+      </div>
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted col-sm">Description:</h6>
+    <p class="card-text col-sm">{{selectedCar.description}}</p>
   </div>
 </div>

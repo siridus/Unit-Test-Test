@@ -29,6 +29,6 @@ describe('Car', () => {
   });
 
   it('price should return string 1000', () => {
-    expect(car.price).toBe('Beschreibung');
+    expect(car.price).toBe(1000);
   });
 });
