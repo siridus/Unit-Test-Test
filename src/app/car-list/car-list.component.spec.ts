@@ -36,9 +36,19 @@ describe('CarListComponent', () => {
   });
 
   it('should create links', () => {
-    carListFixture.autoDetectChanges();
+    carListFixture.detectChanges();
     debugElements = carListFixture.debugElement.queryAll(By.css('a'));
     // spyOn(carListComponent, 'getCars').and.returnValue(MOCKCARS);
+    expect(debugElements.length).toBeGreaterThan(0);
+  });
+
+  it('should remove links when car uses changeAvailable()', () => {
+    carListFixture.detectChanges();
+    debugElements = carListFixture.debugElement.queryAll(By.css('a'));
+    carListComponent.carList.forEach(car => {
+      car.changeAvailable();
+    });
+    carListFixture.detectChanges();
     expect(debugElements.length).toBeGreaterThan(0);
   });
 });
