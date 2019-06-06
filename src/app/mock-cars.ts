@@ -9,4 +9,5 @@ export const MOCKCARS: Car[] = [
     new Car(5, 'Renault', 'Klasse!', 999.99),
     new Car(6, 'Honda', 'Klasse!', 1111.99),
     new Car(7, 'Mercedes', 'Klasse!', 1222.99),
+    new Car(8, 'BMW', 'Klasse!', 1222.99),
 ];
