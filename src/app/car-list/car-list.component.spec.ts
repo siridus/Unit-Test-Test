@@ -42,13 +42,11 @@ describe('CarListComponent', () => {
     expect(debugElements.length).toBeGreaterThan(0);
   });
 
-  it('should remove links when car uses changeAvailable()', () => {
-    carListFixture.detectChanges();
-    debugElements = carListFixture.debugElement.queryAll(By.css('a'));
+  it('should change car.available to false when car uses changeAvailable()', () => {
+    carListComponent.getCars();
     carListComponent.carList.forEach(car => {
       car.changeAvailable();
+      expect(car.available).toBeFalsy();
     });
-    carListFixture.detectChanges();
-    expect(debugElements.length).toBeGreaterThan(0);
   });
 });
